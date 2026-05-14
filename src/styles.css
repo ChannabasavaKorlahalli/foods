@@ -19,6 +19,16 @@ body {
 }
 
 @layer components {
+  /** Subtle grid behind nav — matches premium minimal reference */
+  .nav-grid {
+    background-color: rgba(8, 10, 8, 0.78);
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: center top;
+  }
+
   .btn-primary {
     @apply inline-flex h-12 items-center gap-2 rounded-full bg-grain px-6 text-sm font-semibold text-ink transition hover:bg-linen;
   }

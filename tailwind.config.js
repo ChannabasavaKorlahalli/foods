@@ -13,6 +13,7 @@ export default {
         moss: '#6f7f43',
         grain: '#d5ad6d',
         linen: '#f5ecd9',
+        steel: '#9eb0bf',
       },
       boxShadow: {
         premium: '0 24px 80px rgba(0, 0, 0, 0.42)',
