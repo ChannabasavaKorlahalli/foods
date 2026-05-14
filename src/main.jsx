@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { ArrowRight, Leaf, MapPin, Phone } from 'lucide-react';
 import './styles.css';
 
+const LOGO_SRC = '/logo-kvk.png';
+
 /** Assorted dals / pulses — used site-wide so we don’t pair wrong stock with each variety. */
 const PULSE_VISUAL =
   'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=2000&q=88';
@@ -50,14 +52,14 @@ function Navigation() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#home" className="group flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-grain/50 bg-grain/10 text-sm font-semibold text-grain">
-            K
-          </span>
-          <span>
-            <span className="block text-sm font-semibold uppercase tracking-[0.22em] text-white">KVK</span>
-            <span className="block text-xs text-linen/55">Pulses trading</span>
-          </span>
+        <a href="#home" className="group flex min-w-0 shrink items-center gap-2 sm:gap-3">
+          <img
+            src={LOGO_SRC}
+            alt="KVK & Co — K. Veerabhadrappa & Co, pulses trading"
+            width={200}
+            height={64}
+            className="h-9 w-auto max-h-10 object-contain object-left sm:h-11 sm:max-h-[52px]"
+          />
         </a>
         <div className="hidden items-center gap-8 text-sm text-linen/70 md:flex">
           <a className="transition hover:text-grain" href="#pulses">
@@ -217,8 +219,18 @@ function Contact() {
           </a>
         </Reveal>
       </div>
-      <div className="relative border-t border-white/10 px-5 py-5 text-center text-xs uppercase tracking-[0.22em] text-linen/45">
-        KVK — pulses trading
+      <div className="relative flex flex-col items-center gap-3 border-t border-white/10 px-5 py-6 sm:flex-row sm:justify-center sm:gap-5">
+        <img
+          src={LOGO_SRC}
+          alt=""
+          width={160}
+          height={52}
+          className="h-8 w-auto object-contain opacity-90 sm:h-9"
+          aria-hidden
+        />
+        <p className="text-center text-xs uppercase tracking-[0.22em] text-linen/45">
+          K. Veerabhadrappa &amp; Co — pulses trading
+        </p>
       </div>
     </footer>
   );
