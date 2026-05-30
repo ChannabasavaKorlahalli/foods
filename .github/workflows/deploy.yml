@@ -20,16 +20,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+          cache: npm
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
         run: npm run build
+
+      - name: Prepare GitHub Pages output
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
+          echo "foods.vaaliadvisory.com" > dist/CNAME
+          ls -la dist/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
