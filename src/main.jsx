@@ -1,7 +1,9 @@
-import React, { useEffect, useId } from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowRight, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Leaf, MapPin, Phone } from 'lucide-react';
 import './styles.css';
+
+const LOGO_SRC = '/logo.png';
 
 /** Assorted dals / pulses — used site-wide so we don’t pair wrong stock with each variety. */
 const PULSE_VISUAL =
@@ -15,65 +17,6 @@ const pulses = [
   'Kala chana',
   'Mung',
 ];
-
-/** Geometric mark: gold + steel, connected nodes (reference-style). */
-function BrandMark({ className }) {
-  const uid = useId().replace(/:/g, '');
-  const gradId = `kvk-mark-grad-${uid}`;
-  return (
-    <svg className={className} viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-      <defs>
-        <linearGradient id={gradId} x1="6" y1="10" x2="50" y2="44" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#d5ad6d" />
-          <stop offset="1" stopColor="#9eb0bf" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M12 42 L22 12 L30 42"
-        stroke="#d5ad6d"
-        strokeWidth="2.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M44 12 L34 42 L26 12"
-        stroke="#9eb0bf"
-        strokeWidth="2.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <line x1="21" y1="28" x2="35" y2="28" stroke={`url(#${gradId})`} strokeWidth="2.25" strokeLinecap="round" />
-      <circle cx="21" cy="28" r="3.2" fill="#d5ad6d" />
-      <circle cx="35" cy="28" r="3.2" fill="#9eb0bf" />
-    </svg>
-  );
-}
-
-function BrandLogo({ variant = 'header', className = '' }) {
-  const footer = variant === 'footer';
-  return (
-    <div
-      className={`flex items-center gap-2.5 sm:gap-3 ${footer ? 'opacity-95' : ''} ${className}`}
-    >
-      <BrandMark className={footer ? 'h-9 w-9 shrink-0 sm:h-10 sm:w-10' : 'h-10 w-10 shrink-0 sm:h-11 sm:w-11'} />
-      <div className="min-w-0 leading-none">
-        <p className="font-sans text-lg font-semibold tracking-[0.38em] text-grain sm:text-xl">KVK</p>
-        <div className="mt-1.5 flex items-center gap-2 sm:mt-2">
-          <span className="h-px w-4 shrink-0 bg-grain/50 sm:w-5" />
-          <span className="text-[8px] font-semibold uppercase tracking-[0.32em] text-grain/90 sm:text-[9px]">
-            Pulses trading
-          </span>
-          <span className="h-px w-4 shrink-0 bg-grain/50 sm:w-5" />
-        </div>
-        {!footer && (
-          <p className="mt-1.5 hidden text-[9px] font-medium uppercase tracking-[0.18em] text-steel/95 sm:block">
-            K. Veerabhadrappa &amp; Co
-          </p>
-        )}
-      </div>
-    </div>
-  );
-}
 
 function Reveal({ children, className = '' }) {
   return <div className={`reveal ${className}`}>{children}</div>;
@@ -107,11 +50,16 @@ function App() {
 
 function Navigation() {
   return (
-    <header className="nav-grid fixed left-0 right-0 top-0 z-50 border-b border-white/10 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-8 sm:py-4">
-        <a href="#home" className="group min-w-0 shrink focus:outline-none focus-visible:ring-2 focus-visible:ring-grain/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ink">
-          <span className="sr-only">KVK — K. Veerabhadrappa &amp; Co, pulses trading</span>
-          <BrandLogo />
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+        <a href="#home" className="group flex min-w-0 shrink items-center gap-2 sm:gap-3">
+          <img
+            src={LOGO_SRC}
+            alt="Vaali Foods — pulses trading"
+            width={180}
+            height={72}
+            className="h-10 w-auto max-h-11 object-contain object-left sm:h-12 sm:max-h-14"
+          />
         </a>
         <div className="hidden items-center gap-8 text-sm text-linen/70 md:flex">
           <a className="transition hover:text-grain" href="#pulses">
@@ -150,9 +98,8 @@ function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl gap-10 px-5 pb-20 pt-16 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:pt-28">
         <Reveal>
-          <p className="mb-4 inline-flex items-center gap-2.5 rounded-full border border-grain/35 bg-transparent px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-grain sm:text-xs sm:tracking-[0.28em]">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-grain" aria-hidden />
-            Wholesale pulses · 50+ years
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/7 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-grain">
+            <Leaf size={14} /> Pulses only
           </p>
           <h1 className="max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
             Wholesale pulses.
@@ -226,7 +173,7 @@ function About() {
       <div className="mx-auto max-w-3xl px-5 text-center">
         <Reveal>
           <p className="eyebrow">About</p>
-          <h2 className="section-title mt-3 text-3xl sm:text-4xl">KVK</h2>
+          <h2 className="section-title mt-3 text-3xl sm:text-4xl">Vaali Foods</h2>
           <p className="mt-6 text-base leading-7 text-linen/68">
             Pulses trading through the local APMC channel. Sourcing, grading, and bulk dispatch for
             buyers who work in volume.
@@ -272,10 +219,17 @@ function Contact() {
           </a>
         </Reveal>
       </div>
-      <div className="relative flex flex-col items-center gap-4 border-t border-white/10 px-5 py-8 sm:flex-row sm:justify-center sm:gap-8">
-        <BrandLogo variant="footer" />
-        <p className="max-w-xs text-center text-[10px] uppercase leading-relaxed tracking-[0.2em] text-linen/40 sm:max-w-none sm:text-left">
-          K. Veerabhadrappa &amp; Co
+      <div className="relative flex flex-col items-center gap-3 border-t border-white/10 px-5 py-6 sm:flex-row sm:justify-center sm:gap-5">
+        <img
+          src={LOGO_SRC}
+          alt=""
+          width={160}
+          height={52}
+          className="h-9 w-auto object-contain opacity-90 sm:h-10"
+          aria-hidden
+        />
+        <p className="text-center text-xs uppercase tracking-[0.22em] text-linen/45">
+          Vaali Foods — pulses trading
         </p>
       </div>
     </footer>
