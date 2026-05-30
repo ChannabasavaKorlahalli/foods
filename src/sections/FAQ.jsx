@@ -3,17 +3,23 @@ import { ChevronDown } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
 import { FAQ } from '../data/site';
 
-export function FaqSection() {
+export function FaqSection({ embedded = false }) {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32">
+    <section id="faq" className={embedded ? 'border-t border-white/[0.06] py-16 lg:py-20' : 'py-24 lg:py-32'}>
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
-        <Reveal className="text-center">
-          <p className="eyebrow">FAQ</p>
-          <h2 className="section-heading mt-4">Export inquiries answered</h2>
+        <Reveal className={embedded ? '' : 'text-center'}>
+          {embedded ? (
+            <h2 className="font-display text-2xl font-semibold text-cream sm:text-3xl">FAQ</h2>
+          ) : (
+            <>
+              <p className="eyebrow">FAQ</p>
+              <h2 className="section-heading mt-4">Export inquiries answered</h2>
+            </>
+          )}
         </Reveal>
-        <div className="mt-12 space-y-3">
+        <div className={`space-y-3 ${embedded ? 'mt-10' : 'mt-12'}`}>
           {FAQ.map((item, i) => (
             <Reveal key={item.q} delay={(i % 3) + 1}>
               <div className="glass overflow-hidden rounded-2xl">

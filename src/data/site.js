@@ -4,30 +4,30 @@ export const TAGLINE = 'From Farmers to Global Markets';
 export const HERO_METRICS = [
   { value: '150+', label: 'Years Legacy' },
   { value: '45%', label: 'Market Share' },
-  { value: '100%', label: 'Farmer Direct Procurement' },
+  { value: '60%+', label: 'Direct Farmer Procurement' },
   { value: 'Global', label: 'Export Capability' },
 ];
 
 export const TIMELINE = [
   {
     year: '1870s',
-    title: 'Origins in agricultural trade',
-    text: 'Our family enters agricultural commodity markets, building relationships with farmers and local mandis that continue to this day.',
+    title: 'Origins in trade',
+    text: 'Family enters agricultural trade through local mandis.',
   },
   {
     year: '1950s',
     title: 'Regional expansion',
-    text: 'Scaled procurement across regional markets with disciplined lot control, grading standards, and reputation for fair execution.',
+    text: 'Regional expansion with disciplined grading and execution.',
   },
   {
     year: '1990s',
     title: 'Large-scale sourcing',
-    text: 'Expanded into high-volume commodity sourcing across rice, pulses, oilseeds, and coarse grains with integrated aggregation.',
+    text: 'Large-scale aggregation across rice, pulses, and coarse grains.',
   },
   {
     year: 'Today',
-    title: 'Global export platform',
-    text: 'Farmer-direct procurement, laboratory-tested quality, and end-to-end export logistics serving buyers across four continents.',
+    title: 'Global exports',
+    text: 'Global exports with farmer-direct supply and lab-verified lots.',
   },
 ];
 
@@ -36,8 +36,7 @@ export const PRODUCTS = [
     id: 'rice',
     name: 'Rice',
     tagline: 'Basmati & non-Basmati programs',
-    image:
-      'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/rice.jpg',
     specs: ['1121, 1509, Pusa & traditional Basmati', 'IR64, Sona Masoori, Swarna, Ponni', 'Custom moisture & broken specs'],
     detail:
       'Containerized and bulk rice export with variety-specific grading, fumigation coordination, and buyer-defined packaging.',
@@ -46,8 +45,7 @@ export const PRODUCTS = [
     id: 'pulses',
     name: 'Pulses',
     tagline: 'Whole & split across categories',
-    image:
-      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/pulses.jpg',
     specs: ['Toor, moong, urad, chana & masoor', 'Whole and split lots', 'APMC-grade sorting & cleaning'],
     detail:
       'High-volume pulse programs with seasonal procurement strength, moisture discipline, and transparent lot documentation.',
@@ -56,8 +54,7 @@ export const PRODUCTS = [
     id: 'groundnuts',
     name: 'Groundnuts',
     tagline: 'Bold & Java varieties',
-    image:
-      'https://images.unsplash.com/photo-1608797178975-79aa43e9f2d6?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/groundnuts.jpg',
     specs: ['Bold 38/42, 40/50, 50/60', 'Java & blanched options', 'Aflatoxin-tested lots'],
     detail:
       'Farmer-network groundnut sourcing with shelling coordination, size grading, and export-ready moisture management.',
@@ -66,30 +63,12 @@ export const PRODUCTS = [
     id: 'maize',
     name: 'Maize',
     tagline: 'Feed & food-grade corn',
-    image:
-      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/maize.jpg',
     specs: ['Yellow corn export grades', 'Moisture-controlled storage', 'Bulk vessel & container loads'],
     detail:
       'Seasonal maize aggregation with quality verification for feed mills, starch units, and international trading houses.',
   },
 ];
-
-export const RICE_VARIETIES = {
-  basmati: [
-    { name: '1121', grain: 'Extra long (8.35mm+)', moisture: '≤ 12.5%', broken: '≤ 1%', pack: '5–50 kg bags' },
-    { name: '1509', grain: 'Long (7.5mm+)', moisture: '≤ 12.5%', broken: '≤ 2%', pack: '5–50 kg bags' },
-    { name: 'Pusa', grain: 'Long (7.0mm+)', moisture: '≤ 13%', broken: '≤ 2%', pack: '5–25 kg bags' },
-    { name: 'Traditional Basmati', grain: 'Long aromatic', moisture: '≤ 13%', broken: '≤ 2%', pack: 'Custom retail & bulk' },
-  ],
-  nonBasmati: [
-    { name: 'IR64', grain: 'Medium long', moisture: '≤ 14%', broken: '≤ 5%', pack: 'Bulk & 25 kg' },
-    { name: 'Sona Masoori', grain: 'Short bold', moisture: '≤ 14%', broken: '≤ 5%', pack: '5–50 kg' },
-    { name: 'Swarna', grain: 'Medium', moisture: '≤ 14%', broken: '≤ 5%', pack: 'Bulk export' },
-    { name: 'Ponni', grain: 'Medium bold', moisture: '≤ 14%', broken: '≤ 5%', pack: '5–25 kg' },
-    { name: 'Raw Rice', grain: 'As per variety', moisture: 'Buyer spec', broken: 'Custom', pack: 'Flexible' },
-    { name: 'Steam Rice', grain: 'As per variety', moisture: 'Buyer spec', broken: 'Custom', pack: 'Flexible' },
-  ],
-};
 
 export const PROCUREMENT_STEPS = [
   {

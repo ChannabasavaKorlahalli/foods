@@ -2,22 +2,35 @@ import { useState } from 'react';
 import { Reveal } from '../components/ui/Reveal';
 import { PROCUREMENT_STEPS } from '../data/site';
 
-export function Procurement() {
+export function Procurement({ embedded = false }) {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="procurement" className="py-24 lg:py-32">
+    <section id="procurement" className={embedded ? 'py-16 lg:py-20' : 'py-24 lg:py-32'}>
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="eyebrow">Supply Chain</p>
-          <h2 className="section-heading mt-4">The Advantage of Farmer-Direct Sourcing</h2>
-          <p className="section-lead">
-            Direct procurement from farmers and farmer networks — lower cost, faster execution, and complete
-            traceability from field to foreign port.
-          </p>
+          {embedded ? (
+            <>
+              <h2 className="font-display text-2xl font-semibold text-cream sm:text-3xl">
+                Farmer-direct sourcing
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm text-creamMuted">
+                Direct procurement from farmers and networks — lower cost, faster execution, full traceability.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="eyebrow">Supply Chain</p>
+              <h2 className="section-heading mt-4">The Advantage of Farmer-Direct Sourcing</h2>
+              <p className="section-lead">
+                Direct procurement from farmers and farmer networks — lower cost, faster execution, and complete
+                traceability from field to foreign port.
+              </p>
+            </>
+          )}
         </Reveal>
 
-        <div className="mt-14 lg:grid lg:grid-cols-[280px_1fr] lg:gap-12">
+        <div className={`lg:grid lg:grid-cols-[280px_1fr] lg:gap-12 ${embedded ? 'mt-10' : 'mt-14'}`}>
           <div className="relative hidden lg:block">
             <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-gold via-gold/30 to-transparent" />
             <div className="space-y-2">

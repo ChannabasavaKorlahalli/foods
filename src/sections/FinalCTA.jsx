@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
 
@@ -14,9 +15,9 @@ export function FinalCTA() {
           <p className="mt-6 text-lg text-creamMuted">
             150 years of expertise. Farmer-direct sourcing. Global execution.
           </p>
-          <a href="#contact" className="btn-gold mt-10 inline-flex">
-            Start Your Inquiry <ArrowRight size={18} />
-          </a>
+          <Link to="/contact" className="btn-gold mt-10 inline-flex">
+            Get Your Import Quote <ArrowRight size={18} />
+          </Link>
         </Reveal>
       </div>
     </section>

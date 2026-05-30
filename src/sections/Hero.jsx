@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
 import { HERO_METRICS } from '../data/site';
@@ -37,12 +38,12 @@ export function Hero() {
         <div className="absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[100px]" />
         <div className="absolute -right-10 bottom-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]" />
         <img
-          src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=60"
+          src="/images/rice.jpg"
           alt=""
           className="absolute right-[5%] top-[20%] hidden h-40 w-40 rotate-12 rounded-2xl object-cover opacity-20 blur-[1px] lg:block xl:h-52 xl:w-52"
         />
         <img
-          src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=60"
+          src="/images/pulses.jpg"
           alt=""
           className="absolute bottom-[25%] left-[8%] hidden h-32 w-32 -rotate-6 rounded-2xl object-cover opacity-15 lg:block"
         />
@@ -51,7 +52,6 @@ export function Hero() {
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-8 lg:px-8 lg:pb-24">
         <Reveal>
           <p className="eyebrow">Vaali Foods · Agricultural Commodities Export</p>
-          <p className="mt-3 text-sm font-medium tracking-wide text-creamMuted">From Farmers to Global Markets</p>
         </Reveal>
         <Reveal delay={1}>
           <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-5xl lg:text-6xl xl:text-7xl">
@@ -60,15 +60,15 @@ export function Hero() {
         </Reveal>
         <Reveal delay={2}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-creamMuted">
-            Directly sourcing premium Rice, Pulses, Groundnuts and Maize from farmers and delivering them
-            to global markets with complete transparency.
+            Farmer-direct rice, pulses, groundnuts, and maize — laboratory-verified, fully traceable, and
+            export-ready for global buyers.
           </p>
         </Reveal>
         <Reveal delay={2} className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a href="#contact" className="btn-gold">
-            Get Export Quote <ArrowRight size={18} />
-          </a>
-          <a href="#products" className="btn-ghost">
+          <Link to="/contact" className="btn-gold">
+            Get Your Import Quote <ArrowRight size={18} />
+          </Link>
+          <a href="#commodities" className="btn-ghost">
             Explore Products
           </a>
         </Reveal>

@@ -3,20 +3,40 @@ import { REGIONS } from '../data/site';
 
 const ORIGIN = { x: 68, y: 48 };
 
-export function Global() {
+export function Global({ embedded = false }) {
   return (
-    <section id="global" className="py-24 lg:py-32">
+    <section
+      id="global"
+      className={
+        embedded
+          ? 'border-t border-white/[0.06] bg-midnight py-16 lg:py-20'
+          : 'py-24 lg:py-32'
+      }
+    >
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal>
-          <p className="eyebrow">Global Reach</p>
-          <h2 className="section-heading mt-4">Global Export Network</h2>
-          <p className="section-lead">
-            Serving importers across the Middle East, Asia, Africa, and Europe with containerized and bulk
-            shipment programs from major Indian ports.
-          </p>
+          {embedded ? (
+            <>
+              <h2 className="font-display text-2xl font-semibold text-cream sm:text-3xl">
+                Global export network
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm text-creamMuted">
+                Serving importers across the Middle East, Asia, Africa, and Europe from major Indian ports.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="eyebrow">Global Reach</p>
+              <h2 className="section-heading mt-4">Global Export Network</h2>
+              <p className="section-lead">
+                Serving importers across the Middle East, Asia, Africa, and Europe with containerized and bulk
+                shipment programs from major Indian ports.
+              </p>
+            </>
+          )}
         </Reveal>
 
-        <Reveal className="mt-14">
+        <Reveal className={embedded ? 'mt-10' : 'mt-14'}>
           <div className="glass relative overflow-hidden rounded-2xl p-4 sm:p-8">
             <svg viewBox="0 0 100 60" className="w-full text-midnightLight" aria-label="World map showing export regions">
               <rect width="100" height="60" fill="#0c1224" rx="2" />

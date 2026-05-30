@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import { LOGO, TAGLINE } from '../data/site';
+import { LOGO } from '../data/site';
 
 const links = [
-  { href: '#legacy', label: 'Legacy' },
-  { href: '#products', label: 'Products' },
-  { href: '#rice', label: 'Rice' },
-  { href: '#quality', label: 'Quality' },
-  { href: '#global', label: 'Global' },
-  { href: '#contact', label: 'Contact' },
+  { to: '/', label: 'Home', end: true },
+  { to: '/why-us', label: 'Why Us' },
+  { to: '/how-we-work', label: 'How We Work' },
+  { to: '/contact', label: 'Contact' },
 ];
+
+const navClass = ({ isActive }) =>
+  `nav-link ${isActive ? 'text-gold' : ''}`.trim();
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,30 +23,42 @@ export function Nav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
         scrolled ? 'glass-strong shadow-card' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#home" className="flex min-w-0 items-center gap-3">
-          <img src={LOGO} alt="Vaali Foods" className="h-10 w-auto object-contain sm:h-11" width={140} height={44} />
-          <span className="hidden text-xs text-creamMuted lg:block">{TAGLINE}</span>
-        </a>
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+        <Link to="/" className="flex min-w-0 shrink-0 items-center" onClick={() => setOpen(false)}>
+          <img
+            src={LOGO}
+            alt="Vaali Foods"
+            width={144}
+            height={96}
+            className="h-16 w-36 object-contain object-left"
+          />
+        </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link">
+            <NavLink key={l.to} to={l.to} end={l.end} className={navClass}>
               {l.label}
-            </a>
+            </NavLink>
           ))}
         </div>
 
         <div className="hidden lg:block">
-          <a href="#contact" className="btn-gold">
-            Get Export Quote <ArrowRight size={16} />
-          </a>
+          <Link to="/contact" className="btn-gold">
+            Get Your Import Quote <ArrowRight size={16} />
+          </Link>
         </div>
 
         <button
@@ -61,13 +75,19 @@ export function Nav() {
         <div className="glass-strong border-t border-white/10 px-5 py-6 lg:hidden">
           <div className="flex flex-col gap-4">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="nav-link text-base" onClick={() => setOpen(false)}>
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.end}
+                className={navClass}
+                onClick={() => setOpen(false)}
+              >
                 {l.label}
-              </a>
+              </NavLink>
             ))}
-            <a href="#contact" className="btn-gold mt-2 justify-center" onClick={() => setOpen(false)}>
-              Get Export Quote
-            </a>
+            <Link to="/contact" className="btn-gold mt-2 justify-center" onClick={() => setOpen(false)}>
+              Get Your Import Quote
+            </Link>
           </div>
         </div>
       )}
