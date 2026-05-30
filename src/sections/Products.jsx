@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Reveal } from '../components/ui/Reveal';
 import { TiltCard } from '../components/ui/TiltCard';
+import { OptimizedImage } from '../components/ui/OptimizedImage';
 import { PRODUCTS } from '../data/site';
 
 export function Products() {
@@ -28,9 +29,11 @@ export function Products() {
                     onFocus={() => setActive(p.id)}
                     onBlur={() => setActive(null)}
                   >
-                    <img
+                    <OptimizedImage
                       src={p.image}
                       alt={p.name}
+                      width={640}
+                      height={400}
                       className="h-full w-full object-cover transition duration-700 hover:scale-105"
                       loading="lazy"
                     />

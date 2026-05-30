@@ -5,8 +5,8 @@ import { useReveal } from '../hooks/useReveal';
 import { LOGO, TAGLINE } from '../data/site';
 
 export function SiteLayout() {
-  useReveal();
   const { pathname } = useLocation();
+  useReveal([pathname]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,6 +26,8 @@ export function SiteLayout() {
           className="h-14 w-auto object-contain opacity-95"
           width={144}
           height={96}
+          loading="lazy"
+          decoding="async"
         />
         <p className="text-center text-xs text-creamMuted">
           © {new Date().getFullYear()} Vaali Foods · {TAGLINE}

@@ -46,7 +46,7 @@ export const PRODUCTS = [
     id: 'pulses',
     name: 'Pulses',
     tagline: 'Whole & split across categories',
-    image: '/images/pulses.png',
+    image: '/images/pulses.jpg',
     specs: ['Toor, moong, urad, chana & masoor', 'Whole and split lots', 'APMC-grade sorting & cleaning'],
     detail:
       'High-volume pulse programs with seasonal procurement strength, moisture discipline, and transparent lot documentation.',
@@ -55,7 +55,7 @@ export const PRODUCTS = [
     id: 'groundnuts',
     name: 'Groundnuts',
     tagline: 'Bold & Java varieties',
-    image: '/images/groundnuts.png',
+    image: '/images/groundnuts.jpg',
     specs: ['Bold 38/42, 40/50, 50/60', 'Java & blanched options', 'Aflatoxin-tested lots'],
     detail:
       'Farmer-network groundnut sourcing with shelling coordination, size grading, and export-ready moisture management.',
@@ -64,7 +64,7 @@ export const PRODUCTS = [
     id: 'maize',
     name: 'Maize',
     tagline: 'Feed & food-grade corn',
-    image: '/images/maize.png',
+    image: '/images/maize.jpg',
     specs: ['Yellow corn export grades', 'Moisture-controlled storage', 'Bulk vessel & container loads'],
     detail:
       'Seasonal maize aggregation with quality verification for feed mills, starch units, and international trading houses.',

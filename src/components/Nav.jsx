@@ -44,6 +44,9 @@ export function Nav() {
             width={144}
             height={96}
             className="h-16 w-36 object-contain object-left"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </Link>
 

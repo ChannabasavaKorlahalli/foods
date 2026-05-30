@@ -1,52 +1,14 @@
-import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
 import { HERO_METRICS } from '../data/site';
 
 export function Hero() {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 28 }, (_, i) => ({
-        id: i,
-        left: `${(i * 17 + 7) % 100}%`,
-        top: `${(i * 23 + 11) % 100}%`,
-        size: 4 + (i % 5) * 2,
-        duration: 6 + (i % 5) * 2,
-        delay: (i % 7) * 0.4,
-      })),
-    []
-  );
-
   return (
     <section id="home" className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-hero-gradient pt-24">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        {particles.map((p) => (
-          <span
-            key={p.id}
-            className="hero-particle"
-            style={{
-              left: p.left,
-              top: p.top,
-              width: p.size,
-              height: p.size,
-              '--duration': `${p.duration}s`,
-              '--delay': `${p.delay}s`,
-            }}
-          />
-        ))}
         <div className="absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[100px]" />
         <div className="absolute -right-10 bottom-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]" />
-        <img
-          src="/images/rice.jpg"
-          alt=""
-          className="absolute right-[5%] top-[20%] hidden h-40 w-40 rotate-12 rounded-2xl object-cover opacity-20 blur-[1px] lg:block xl:h-52 xl:w-52"
-        />
-        <img
-          src="/images/pulses.png"
-          alt=""
-          className="absolute bottom-[25%] left-[8%] hidden h-32 w-32 -rotate-6 rounded-2xl object-cover opacity-15 lg:block"
-        />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-8 lg:px-8 lg:pb-24">
