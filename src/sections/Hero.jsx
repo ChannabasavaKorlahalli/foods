@@ -43,7 +43,7 @@ export function Hero() {
           className="absolute right-[5%] top-[20%] hidden h-40 w-40 rotate-12 rounded-2xl object-cover opacity-20 blur-[1px] lg:block xl:h-52 xl:w-52"
         />
         <img
-          src="/images/pulses.jpg"
+          src="/images/pulses.png"
           alt=""
           className="absolute bottom-[25%] left-[8%] hidden h-32 w-32 -rotate-6 rounded-2xl object-cover opacity-15 lg:block"
         />
