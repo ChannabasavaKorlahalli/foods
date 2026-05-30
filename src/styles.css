@@ -73,6 +73,12 @@ body {
   .nav-link {
     @apply text-sm text-creamMuted transition hover:text-cream;
   }
+
+  /* True transparent PNG — no box behind logo on dark UI */
+  .logo-img {
+    @apply object-contain object-left;
+    background: transparent;
+  }
 }
 
 .reveal {

@@ -23,9 +23,9 @@ export function SiteLayout() {
         <img
           src={LOGO}
           alt="Vaali Foods"
-          className="h-14 w-auto object-contain opacity-95"
+          className="logo-img h-12 w-auto max-w-[8rem] opacity-95 sm:h-14 sm:max-w-[9rem]"
           width={144}
-          height={96}
+          height={156}
           loading="lazy"
           decoding="async"
         />
