@@ -20,7 +20,7 @@ npm run build
 This project is configured for the custom domain:
 
 ```text
-kvk.vaaliadvisory.com
+foods.vaaliadvisory.com
 ```
 
 ### Deploy with `gh-pages`
@@ -38,8 +38,8 @@ The repository also includes `.github/workflows/deploy.yml`. In GitHub, set Page
 
 ### DNS
 
-Point `kvk.vaaliadvisory.com` to GitHub Pages with a `CNAME` record:
+Point `foods.vaaliadvisory.com` to GitHub Pages with a `CNAME` record:
 
 ```text
-kvk CNAME <your-github-username>.github.io
+foods CNAME <your-github-username>.github.io
 ```

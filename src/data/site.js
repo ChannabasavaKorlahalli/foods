@@ -1,4 +1,5 @@
 export const LOGO = '/logo.png';
+export const SITE_URL = 'https://foods.vaaliadvisory.com';
 export const TAGLINE = 'From Farmers to Global Markets';
 
 export const HERO_METRICS = [

@@ -12,7 +12,7 @@ export function Contact({ embedded = false }) {
     const form = e.target;
     const data = new FormData(form);
     const body = [...data.entries()].map(([k, v]) => `${k}: ${v}`).join('\n');
-    window.location.href = `mailto:exports@vaalifoods.com?subject=Import%20Quote%20Request&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:exports@vaaliadvisory.com?subject=Import%20Quote%20Request&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   };
 
@@ -33,9 +33,9 @@ export function Contact({ embedded = false }) {
                   <Phone size={18} className="text-gold" />
                   +91 00000 00000
                 </a>
-                <a href="mailto:exports@vaalifoods.com" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
+                <a href="mailto:exports@vaaliadvisory.com" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
                   <Mail size={18} className="text-gold" />
-                  exports@vaalifoods.com
+                  exports@vaaliadvisory.com
                 </a>
                 <p className="flex items-center gap-3 text-creamMuted">
                   <MapPin size={18} className="text-gold" />
@@ -52,9 +52,9 @@ export function Contact({ embedded = false }) {
                   <Phone size={18} className="text-gold" />
                   +91 00000 00000
                 </a>
-                <a href="mailto:exports@vaalifoods.com" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
+                <a href="mailto:exports@vaaliadvisory.com" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
                   <Mail size={18} className="text-gold" />
-                  exports@vaalifoods.com
+                  exports@vaaliadvisory.com
                 </a>
                 <p className="flex items-center gap-3 text-creamMuted">
                   <MapPin size={18} className="text-gold" />
