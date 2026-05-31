@@ -131,12 +131,101 @@ body {
   grid-template-rows: 1fr;
 }
 
-.hero-particle {
+/* Hero — abstract visual, no commodity photography */
+.hero-section {
+  background: #05070f;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
+}
+
+.hero-glow-gold {
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.14) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.hero-glow-blue {
+  background: radial-gradient(circle, rgba(100, 140, 220, 0.1) 0%, transparent 70%);
+  filter: blur(50px);
+}
+
+.hero-vignette {
+  background: radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, rgba(5, 7, 15, 0.85) 100%);
+}
+
+.hero-badge {
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.08);
+}
+
+.hero-metrics {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.hero-visual {
+  animation: float 10s ease-in-out infinite;
+}
+
+.hero-ring {
   position: absolute;
+  left: 50%;
+  top: 50%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 162, 39, 0.35) 0%, transparent 70%);
-  animation: float var(--duration, 8s) ease-in-out infinite;
-  animation-delay: var(--delay, 0s);
+  border: 1px solid rgba(201, 162, 39, 0.1);
+  transform: translate(-50%, -50%);
+}
+
+.hero-ring-1 {
+  width: 55%;
+  height: 55%;
+  animation: heroSpin 48s linear infinite;
+}
+
+.hero-ring-2 {
+  width: 78%;
+  height: 78%;
+  border-color: rgba(137, 171, 227, 0.08);
+  animation: heroSpin 72s linear infinite reverse;
+}
+
+.hero-ring-3 {
+  width: 95%;
+  height: 95%;
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.05);
+  animation: heroSpin 96s linear infinite;
+}
+
+.hero-watermark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(7rem, 18vw, 11rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201, 162, 39, 0.07);
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-orbit-node {
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-orbit-node:nth-child(odd) {
+  animation-delay: -2s;
+}
+
+@keyframes heroSpin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .map-line {
@@ -159,7 +248,9 @@ body {
     transform: none;
     transition: none;
   }
-  .hero-particle,
+  .hero-visual,
+  .hero-ring,
+  .hero-orbit-node,
   .map-line {
     animation: none;
   }
