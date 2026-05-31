@@ -76,7 +76,7 @@ body {
 
   /* True transparent PNG — no box behind logo on dark UI */
   .logo-img {
-    @apply object-contain object-left;
+    @apply object-contain object-center;
     background: transparent;
   }
 }

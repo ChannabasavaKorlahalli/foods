@@ -52,13 +52,13 @@ export const PRODUCTS = [
       'High-volume pulse programs with seasonal procurement strength, moisture discipline, and transparent lot documentation.',
   },
   {
-    id: 'groundnuts',
-    name: 'Groundnuts',
-    tagline: 'Bold & Java varieties',
-    image: '/images/groundnuts.jpg',
-    specs: ['Bold 38/42, 40/50, 50/60', 'Java & blanched options', 'Aflatoxin-tested lots'],
+    id: 'neem-oil',
+    name: 'High-Azadirachtin Neem Oil',
+    tagline: 'Low moisture, export-grade quality',
+    image: '/images/neem-oil.png',
+    specs: ['Azadirachtin: 300-3,000+ ppm', 'Low moisture, export-grade quality', 'Batch-wise quality testing'],
     detail:
-      'Farmer-network groundnut sourcing with shelling coordination, size grading, and export-ready moisture management.',
+      'Premium neem oil sourced from quality neem seeds and processed to preserve natural Azadirachtin content. Available in customized potency grades for biopesticide formulations, organic agriculture, and industrial applications, with export-ready packaging.',
   },
   {
     id: 'maize',
@@ -152,7 +152,7 @@ export const FAQ = [
   },
   {
     q: 'Can you provide laboratory reports for our audit?',
-    a: 'Yes. We provide NABL-accredited or buyer-nominated lab reports including moisture content, broken percentage, aflatoxin (for groundnuts), and full grade certificates suitable for import clearance and internal QA audits.',
+    a: 'Yes. We provide NABL-accredited or buyer-nominated lab reports including moisture content, broken percentage, Azadirachtin potency for neem oil, and full grade certificates suitable for import clearance and internal QA audits.',
   },
   {
     q: 'What rice varieties do you export?',

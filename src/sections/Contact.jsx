@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
 
-const commodities = ['Rice', 'Pulses', 'Groundnuts', 'Maize', 'Multiple / Other'];
+const commodities = ['Rice', 'Pulses', 'Neem Oil', 'Maize', 'Multiple / Other'];
+const phoneNumber = '+91 9448525079';
+const phoneHref = 'tel:+919448525079';
+const whatsappHref = 'https://wa.me/919448525079';
 
 export function Contact({ embedded = false }) {
   const [submitted, setSubmitted] = useState(false);
@@ -29,9 +32,13 @@ export function Contact({ embedded = false }) {
                 specifications, and commercial terms.
               </p>
               <div className="mt-10 space-y-4">
-                <a href="tel:+910000000000" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
+                <a href={phoneHref} className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
                   <Phone size={18} className="text-gold" />
-                  +91 00000 00000
+                  {phoneNumber}
+                </a>
+                <a href={whatsappHref} className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
+                  <MessageCircle size={18} className="text-gold" />
+                  WhatsApp {phoneNumber}
                 </a>
                 <a href="mailto:exports@vaaliadvisory.com" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
                   <Mail size={18} className="text-gold" />
@@ -48,9 +55,13 @@ export function Contact({ embedded = false }) {
           {embedded && (
             <Reveal>
               <div className="space-y-4 lg:sticky lg:top-28">
-                <a href="tel:+910000000000" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
+                <a href={phoneHref} className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
                   <Phone size={18} className="text-gold" />
-                  +91 00000 00000
+                  {phoneNumber}
+                </a>
+                <a href={whatsappHref} className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
+                  <MessageCircle size={18} className="text-gold" />
+                  WhatsApp {phoneNumber}
                 </a>
                 <a href="mailto:exports@vaaliadvisory.com" className="flex items-center gap-3 text-creamMuted transition hover:text-gold">
                   <Mail size={18} className="text-gold" />

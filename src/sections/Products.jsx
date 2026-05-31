@@ -14,7 +14,7 @@ export function Products() {
           <p className="eyebrow">Export commodities</p>
           <h2 className="section-heading mt-4">What we supply to global buyers</h2>
           <p className="section-lead">
-            Farmer-direct rice, pulses, groundnuts, and maize — graded, documented, and shipped to importers
+            Farmer-direct rice, pulses, neem oil, and maize — graded, documented, and shipped to importers
             worldwide.
           </p>
         </Reveal>

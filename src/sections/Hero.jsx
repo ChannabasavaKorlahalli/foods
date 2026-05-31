@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowRight, Circle, Globe2, Layers, Sprout, Wheat } from 'lucide-react';
+import { ArrowDown, ArrowRight, Droplets, Globe2, Layers, Sprout, Wheat } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
 import { HERO_METRICS, TAGLINE } from '../data/site';
 
 const commodities = [
   { label: 'Rice', icon: Wheat },
   { label: 'Pulses', icon: Layers },
-  { label: 'Groundnuts', icon: Circle },
+  { label: 'Neem Oil', icon: Droplets },
   { label: 'Maize', icon: Sprout },
 ];
 
@@ -115,7 +115,7 @@ export function Hero() {
 
             <Reveal delay={2}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-creamMuted sm:text-lg">
-                Farmer-direct rice, pulses, groundnuts, and maize — laboratory-verified, fully traceable,
+                Farmer-direct rice, pulses, neem oil, and maize — laboratory-verified, fully traceable,
                 and export-ready for global buyers.
               </p>
               <p className="mt-3 text-sm font-medium tracking-wide text-gold/80">{TAGLINE}</p>

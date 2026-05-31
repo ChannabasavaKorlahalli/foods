@@ -42,8 +42,8 @@ export function Nav() {
             src={LOGO}
             alt="Vaali Foods"
             width={144}
-            height={156}
-            className="logo-img h-14 w-auto max-w-[9rem] sm:h-16 sm:max-w-[10rem]"
+            height={96}
+            className="logo-img h-24 w-36 max-w-none"
             loading="eager"
             decoding="async"
             fetchPriority="high"
