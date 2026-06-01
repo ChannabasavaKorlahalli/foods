@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight, Droplets, Globe2, Layers, Sprout, Wheat } from 'lucide-react';
-import { Reveal } from '../components/ui/Reveal';
 import { HERO_METRICS, TAGLINE } from '../data/site';
 
 const commodities = [
@@ -95,42 +94,36 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           {/* Copy column */}
           <div>
-            <Reveal>
-              <div className="hero-badge inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/[0.06] px-4 py-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-glow" />
-                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-gold">
-                  Vaali Foods · Export
-                </span>
-              </div>
-            </Reveal>
+            <div className="hero-badge inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/[0.06] px-4 py-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-glow" />
+              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-gold">
+                Vaali Foods · Export
+              </span>
+            </div>
 
-            <Reveal delay={1}>
-              <h1 className="mt-8 font-display text-4xl font-semibold leading-[1.02] tracking-tight text-cream sm:text-5xl lg:text-[3.35rem] xl:text-6xl">
-                <span className="block text-creamMuted/90">150 years of</span>
-                <span className="mt-1 block bg-gold-gradient bg-clip-text text-transparent">
-                  agricultural trading excellence
-                </span>
-              </h1>
-            </Reveal>
+            <h1 className="mt-8 font-display text-4xl font-semibold leading-[1.02] tracking-tight text-cream sm:text-5xl lg:text-[3.35rem] xl:text-6xl">
+              <span className="block text-creamMuted/90">150 years of</span>
+              <span className="mt-1 block bg-gold-gradient bg-clip-text text-transparent">
+                agricultural trading excellence
+              </span>
+            </h1>
 
-            <Reveal delay={2}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-creamMuted sm:text-lg">
-                Farmer-direct rice, pulses, neem oil, and maize — laboratory-verified, fully traceable,
-                and export-ready for global buyers.
-              </p>
-              <p className="mt-3 text-sm font-medium tracking-wide text-gold/80">{TAGLINE}</p>
-            </Reveal>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-creamMuted sm:text-lg">
+              Farmer-direct rice, pulses, neem oil, and maize — laboratory-verified, fully traceable,
+              and export-ready for global buyers.
+            </p>
+            <p className="mt-3 text-sm font-medium tracking-wide text-gold/80">{TAGLINE}</p>
 
-            <Reveal delay={2} className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link to="/contact" className="btn-gold">
                 Get Your Import Quote <ArrowRight size={18} />
               </Link>
               <a href="#commodities" className="btn-ghost">
                 Explore Products
               </a>
-            </Reveal>
+            </div>
 
-            <Reveal delay={3} className="mt-8 flex flex-wrap gap-2 lg:hidden">
+            <div className="mt-8 flex flex-wrap gap-2 lg:hidden">
               {commodities.map((c) => (
                 <span
                   key={c.label}
@@ -139,29 +132,27 @@ export function Hero() {
                   {c.label}
                 </span>
               ))}
-            </Reveal>
+            </div>
           </div>
 
           {/* Visual column */}
-          <Reveal delay={2} className="hidden lg:block">
+          <div className="hidden lg:block">
             <HeroVisual />
-          </Reveal>
+          </div>
         </div>
 
         {/* Metrics strip */}
         <div className="mt-14 lg:mt-20">
-          <Reveal>
-            <div className="hero-metrics glass overflow-hidden rounded-2xl border-gold/10">
-              <div className="grid grid-cols-2 divide-white/5 sm:grid-cols-4 sm:divide-x">
-                {HERO_METRICS.map((m) => (
-                  <div key={m.label} className="px-5 py-6 text-center sm:px-6 lg:py-7">
-                    <p className="font-display text-2xl font-semibold text-gold sm:text-3xl">{m.value}</p>
-                    <p className="mt-1.5 text-xs text-creamMuted sm:text-sm">{m.label}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="hero-metrics glass overflow-hidden rounded-2xl border-gold/10">
+            <div className="grid grid-cols-2 divide-white/5 sm:grid-cols-4 sm:divide-x">
+              {HERO_METRICS.map((m) => (
+                <div key={m.label} className="px-5 py-6 text-center sm:px-6 lg:py-7">
+                  <p className="font-display text-2xl font-semibold text-gold sm:text-3xl">{m.value}</p>
+                  <p className="mt-1.5 text-xs text-creamMuted sm:text-sm">{m.label}</p>
+                </div>
+              ))}
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
 

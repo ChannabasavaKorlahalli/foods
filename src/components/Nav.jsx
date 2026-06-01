@@ -25,14 +25,14 @@ export function Nav() {
 
   return (
     <header className="relative z-40 border-b border-white/[0.06] bg-navy/95 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8 lg:py-2.5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-0">
         <Link to="/" className="flex min-w-0 shrink-0 items-center" onClick={() => setOpen(false)}>
           <span className="logo-shell">
             <img
               src={LOGO}
               alt="Vaali Foods"
-              width={232}
-              height={224}
+              width={186}
+              height={179}
               className="logo-img"
               loading="eager"
               decoding="async"
@@ -66,7 +66,7 @@ export function Nav() {
       </nav>
 
       {open && (
-        <div className="glass-strong border-t border-white/10 px-5 py-6 lg:hidden">
+        <div className="glass-strong border-t border-white/10 p-0 lg:hidden">
           <div className="flex flex-col gap-4">
             {links.map((l) => (
               <NavLink

@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SiteLayout } from './layouts/SiteLayout';
+import { HomePage } from './pages/HomePage';
 
-const HomePage = lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })));
 const WhyUsPage = lazy(() => import('./pages/WhyUsPage').then((m) => ({ default: m.WhyUsPage })));
 const HowWeWorkPage = lazy(() =>
   import('./pages/HowWeWorkPage').then((m) => ({ default: m.HowWeWorkPage }))
@@ -10,21 +10,14 @@ const HowWeWorkPage = lazy(() =>
 const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })));
 
 function PageFallback() {
-  return <div className="min-h-[50vh] bg-navy" aria-hidden />;
+  return <div className="min-h-[30vh] bg-navy" aria-hidden />;
 }
 
 export default function App() {
   return (
     <Routes>
       <Route element={<SiteLayout />}>
-        <Route
-          index
-          element={
-            <Suspense fallback={<PageFallback />}>
-              <HomePage />
-            </Suspense>
-          }
-        />
+        <Route index element={<HomePage />} />
         <Route
           path="why-us"
           element={

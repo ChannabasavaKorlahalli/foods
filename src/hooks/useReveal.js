@@ -1,7 +1,16 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
+
+function revealIfInView(el) {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+    el.classList.add('is-visible');
+    return true;
+  }
+  return false;
+}
 
 export function useReveal(deps = []) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -11,10 +20,15 @@ export function useReveal(deps = []) {
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+      { threshold: 0.01, rootMargin: '0px 0px -5% 0px' }
     );
 
-    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => {
+      if (!revealIfInView(el)) {
+        observer.observe(el);
+      }
+    });
+
     return () => observer.disconnect();
   }, deps);
 }
