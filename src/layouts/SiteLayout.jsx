@@ -20,15 +20,17 @@ export function SiteLayout() {
         <Outlet />
       </main>
       <footer className="flex flex-col items-center gap-4 border-t border-white/[0.06] bg-navy px-5 py-10">
-        <img
-          src={LOGO}
-          alt="Vaali Foods"
-          className="logo-img opacity-95"
-          width={290}
-          height={280}
-          loading="lazy"
-          decoding="async"
-        />
+        <span className="logo-shell">
+          <img
+            src={LOGO}
+            alt="Vaali Foods"
+            className="logo-img opacity-95"
+            width={232}
+            height={224}
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
         <p className="text-center text-xs text-creamMuted">
           © {new Date().getFullYear()} Vaali Foods · {TAGLINE}
         </p>

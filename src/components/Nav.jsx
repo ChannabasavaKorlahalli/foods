@@ -38,16 +38,18 @@ export function Nav() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8 lg:py-2.5">
         <Link to="/" className="flex min-w-0 shrink-0 items-center" onClick={() => setOpen(false)}>
-          <img
-            src={LOGO}
-            alt="Vaali Foods"
-            width={290}
-            height={280}
-            className="logo-img"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-          />
+          <span className="logo-shell">
+            <img
+              src={LOGO}
+              alt="Vaali Foods"
+              width={232}
+              height={224}
+              className="logo-img"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </span>
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">

@@ -4,7 +4,7 @@ import { FinalCTA } from '../sections/FinalCTA';
 
 export function ContactPage() {
   return (
-    <div className="pt-32 lg:pt-36">
+    <div className="pt-28 lg:pt-32">
       <section className="mx-auto max-w-7xl px-5 pb-8 lg:px-8">
         <Reveal>
           <p className="eyebrow">Contact</p>
