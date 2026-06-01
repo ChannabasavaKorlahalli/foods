@@ -17,7 +17,7 @@ export function SiteLayout() {
     <>
       <div className="noise-overlay" aria-hidden />
       <Nav />
-      <main className="bg-navy text-cream">
+      <main className="bg-hero-gradient text-cream">
         <Outlet />
       </main>
       <BackToTop />
@@ -27,8 +27,8 @@ export function SiteLayout() {
             src={LOGO}
             alt="Vaali Foods"
             className="logo-img opacity-95"
-            width={186}
-            height={179}
+            width={167}
+            height={161}
             loading="lazy"
             decoding="async"
           />

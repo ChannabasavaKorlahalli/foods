@@ -74,18 +74,13 @@ body {
     @apply text-sm text-creamMuted transition hover:text-cream;
   }
 
-  /* Matches hero-gradient so any residual dark in the asset disappears */
   .logo-shell {
-    @apply inline-flex shrink-0 items-center justify-center;
-    background-color: #05070f;
-    background-image:
-      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201, 162, 39, 0.12), transparent 55%),
-      linear-gradient(180deg, #05070f 0%, #0c1224 45%, #05070f 100%);
+    @apply inline-flex shrink-0 items-center justify-center bg-transparent;
   }
 
   .logo-img {
     @apply object-contain object-center;
-    height: 6.4rem;
+    height: 5.76rem;
     width: auto;
     max-width: none;
     mix-blend-mode: lighten;
@@ -93,7 +88,7 @@ body {
 
   @media (min-width: 1024px) {
     .logo-img {
-      height: 7.04rem;
+      height: 6.336rem;
     }
   }
 

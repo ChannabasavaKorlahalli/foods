@@ -90,7 +90,7 @@ export function Hero() {
         <div className="hero-vignette absolute inset-0" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-6 lg:px-8 lg:pb-28 lg:pt-10">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-28 lg:px-8 lg:pb-28 lg:pt-32">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           {/* Copy column */}
           <div>
