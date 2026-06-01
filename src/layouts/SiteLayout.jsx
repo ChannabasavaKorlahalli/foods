@@ -2,12 +2,10 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { BackToTop } from '../components/BackToTop';
 import { Nav } from '../components/Nav';
-import { useReveal } from '../hooks/useReveal';
 import { LOGO, TAGLINE } from '../data/site';
 
 export function SiteLayout() {
   const { pathname } = useLocation();
-  useReveal([pathname]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
