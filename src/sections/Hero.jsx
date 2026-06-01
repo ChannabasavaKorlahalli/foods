@@ -80,7 +80,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="hero-section relative flex min-h-screen flex-col justify-center overflow-hidden pt-24"
+      className="hero-section relative flex min-h-screen flex-col justify-center overflow-hidden pt-32 lg:pt-36"
     >
       {/* Background layers — no photos */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>

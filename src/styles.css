@@ -74,10 +74,19 @@ body {
     @apply text-sm text-creamMuted transition hover:text-cream;
   }
 
-  /* True transparent PNG — no box behind logo on dark UI */
+  /* Transparent PNG — blends with navy page background */
   .logo-img {
     @apply object-contain object-center;
+    height: 10rem;
+    width: auto;
+    max-width: none;
     background: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    .logo-img {
+      height: 11rem;
+    }
   }
 }
 
