@@ -55,7 +55,7 @@ export const PRODUCTS = [
     id: 'neem-oil',
     name: 'High-Azadirachtin Neem Oil',
     tagline: 'Low moisture, export-grade quality',
-    image: '/images/neem-oil.png',
+    image: '/images/neem-oil.jpg',
     specs: ['Azadirachtin: 300-3,000+ ppm', 'Low moisture, export-grade quality', 'Batch-wise quality testing'],
     detail:
       'Premium neem oil sourced from quality neem seeds and processed to preserve natural Azadirachtin content. Available in customized potency grades for biopesticide formulations, organic agriculture, and industrial applications, with export-ready packaging.',

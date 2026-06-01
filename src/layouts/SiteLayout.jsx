@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { BackToTop } from '../components/BackToTop';
 import { Nav } from '../components/Nav';
 import { useReveal } from '../hooks/useReveal';
 import { LOGO, TAGLINE } from '../data/site';
@@ -19,6 +20,7 @@ export function SiteLayout() {
       <main className="bg-navy text-cream">
         <Outlet />
       </main>
+      <BackToTop />
       <footer className="flex flex-col items-center gap-4 border-t border-white/[0.06] bg-navy px-5 py-10">
         <span className="logo-shell">
           <img

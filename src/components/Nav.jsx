@@ -14,14 +14,7 @@ const navClass = ({ isActive }) =>
   `nav-link ${isActive ? 'text-gold' : ''}`.trim();
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -31,11 +24,7 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass-strong shadow-card' : 'bg-transparent'
-      }`}
-    >
+    <header className="relative z-40 border-b border-white/[0.06] bg-navy/95 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8 lg:py-2.5">
         <Link to="/" className="flex min-w-0 shrink-0 items-center" onClick={() => setOpen(false)}>
           <span className="logo-shell">

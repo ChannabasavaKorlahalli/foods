@@ -4,7 +4,7 @@ import { Quality } from '../sections/Quality';
 
 export function WhyUsPage() {
   return (
-    <div className="pt-28 lg:pt-32">
+    <div>
       <section className="mx-auto max-w-7xl px-5 pb-8 lg:px-8 lg:pb-12">
         <Reveal>
           <p className="eyebrow">Why Us</p>

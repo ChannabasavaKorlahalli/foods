@@ -96,6 +96,29 @@ body {
       height: 8.8rem;
     }
   }
+
+  .back-to-top {
+    @apply fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-midnight/40 text-creamMuted/40 shadow-none backdrop-blur-sm transition-all duration-300;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+  }
+
+  .back-to-top--visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover,
+  .back-to-top:focus-visible {
+    @apply border-gold/50 bg-gold-gradient text-navy shadow-glow;
+    transform: translateY(-2px);
+  }
+
+  .back-to-top:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-gold;
+  }
 }
 
 .reveal {
